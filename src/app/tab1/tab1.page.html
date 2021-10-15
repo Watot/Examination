@@ -1,17 +1,98 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 1
+      HOME PAGE
     </ion-title>
   </ion-toolbar>
 </ion-header>
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      Customize your  character!
+    </ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>Gender</ion-label>
+    <ion-select placeholder="Select One">
+      <ion-select-option value="f">Female</ion-select-option>
+      <ion-select-option value="m">Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>SELECT POWER!</ion-label>
+    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+      <ion-select-option value="WIND">WIND</ion-select-option>
+      <ion-select-option value="FIRE">FIRE</ion-select-option>
+      <ion-select-option value="WATER">WATER</ion-select-option>
+      <ion-select-option value="EARTH">EARTH</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      SELECT RANDOM ABILITES
+    </ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>SELECT 3</ion-label>
+    <ion-select multiple="true" cancelText="Nah" okText="Okay!">
+      <ion-select-option value="RANDOM 1">RANDOM 1</ion-select-option>
+      <ion-select-option value="RANDOM 2">RANDOM 2</ion-select-option>
+      <ion-select-option value="RANDOM 3">RANDOM 3</ion-select-option>
+      
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>SELECT PETS</ion-label>
+    <ion-select multiple="true" [value]="['bird', 'dog']">
+      <ion-select-option value="bird">Bird</ion-select-option>
+      <ion-select-option value="cat">Cat</ion-select-option>
+      <ion-select-option value="dog">Dog</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+      SAVE YOUR CHARACTER
+    </ion-label>
+  </ion-list-header>
+
+  <ion-item>
+    <ion-label>CONFIRM</ion-label>
+    <ion-select [compareWith]="compareWith">
+      <ion-select-option *ngFor="let user of users" [value]="user">{{user.first + ' ' + user.last}}</ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>
+  
+    </ion-label>
+  </ion-list-header>
+
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
+      <ion-title size="large">HOME PAGE</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+
+  
 </ion-content>
+<ion-button>
+  <ion-button href="signin" class="button" color="primary">LOG OUT</ion-button>
+</ion-button>
+
